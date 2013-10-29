@@ -1,0 +1,29 @@
+@CHARSET "UTF-8";
+
+.list-item-titre
+{
+    float:left;
+    width:100%;
+    font-size:90%;
+    padding-right:25px;
+}
+.list-item-description
+{
+    float:left;
+    width:95%;
+    color:#666666;
+    font-size:80%;
+    padding-right:25px;
+}
+.x-item-selected .list-item-titre
+{
+    color:#ffffff;
+}
+.x-item-selected .list-item-description
+{
+    color:#ffffff;
+}
+.events-list-empty-text
+{
+    padding:10px;
+}
