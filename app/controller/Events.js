@@ -6,18 +6,34 @@ Ext.define("EventsManager.controller.Events", {
     config: {
 		// References sur les vues
         refs: {
-			eventsListContainer: "eventslistcontainer"
+			eventsListContainer: "eventslistcontainer",
+			eventsList: "eventslist"
         },
         control: {
         	// Evenements lance par EventsListContainer
         	eventsListContainer: {
         		newEventCommand: "onNewEventCommand"
+            },
+            // Evenements lance par EventsList
+            eventsList: {
+            	editEventCommand: "onEditEventCommand"
             }
         }
     },
     
+    // Creer un nouvel evenement
     onNewEventCommand: function () {
-    	alert("onNewEvent");
+   
+    	var eventsEditor = {
+			xtype: "eventseditor"
+		};
+    	Ext.Viewport.animateActiveItem(eventsEditor, {type: 'slide', direction: 'left'});
+    	
+    },
+    
+    // Modifier un evenement existant
+    onEditEventCommand: function(){
+    	alert("onEditEvent");
     },
     
     launch: function () {

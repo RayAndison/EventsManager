@@ -8,7 +8,7 @@ Ext.define("EventsManager.model.Events", {
         fields: [
             { name: 'id', type: 'int' },
             { name: 'date', type: 'date', dateFormat: 'c' },
-            { name: 'titre', type: 'string' },
+            { name: 'title', type: 'string' },
             { name: 'description', type: 'string' }
         ]
     }

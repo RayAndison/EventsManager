@@ -7,8 +7,8 @@ Ext.define("EventsManager.store.Events", {
     config: {
         model: "EventsManager.model.Events",
         data: [
-            { titre: "Bite Me I'm Famous", description: "Convention The Vampire Diaries", date: "19-05-2013" },
-            { titre: "From Wilmington To Paris", description: "Convention One Tree Hill", date: "17-10-2013" }
+            { title: "Bite Me I'm Famous", description: "Convention The Vampire Diaries", date: "19-05-2013" },
+            { title: "From Wilmington To Paris", description: "Convention One Tree Hill", date: "17-10-2013" }
         ],
         sorters: [{ property: 'date', direction: 'DESC'}]
     }

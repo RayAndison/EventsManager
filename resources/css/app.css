@@ -1,6 +1,6 @@
 @CHARSET "UTF-8";
 
-.list-item-titre
+.list-item-title
 {
     float:left;
     width:100%;
@@ -15,7 +15,7 @@
     font-size:80%;
     padding-right:25px;
 }
-.x-item-selected .list-item-titre
+.x-item-selected .list-item-title
 {
     color:#ffffff;
 }

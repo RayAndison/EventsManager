@@ -5,7 +5,8 @@ Ext.application({
     views: [
 	    "EventsListContainer",
 	    "EventsList",
-	    "SearchBar"
+	    "SearchBar",
+	    "EventsEditor"
     ],
     
     // Controleurs
@@ -18,11 +19,18 @@ Ext.application({
     stores: ["Events"],
     
     launch: function () {
+	
 		// Creation d'une vue pour le container
 		var eventsListContainer = {
 	    	xtype: "eventslistcontainer"
 	    };
-		// Ajout de la vue au ViewPort
-		Ext.Viewport.add(eventsListContainer);
+		
+		// Creation d'une vue pour le formulaire d'ajout/modification d'un evenement
+		var eventsEditor = {
+			xtype: "eventseditor"
+		};
+		
+		// Ajout des vues au ViewPort
+		Ext.Viewport.add([eventsListContainer, eventsEditor]);
     }
 });
