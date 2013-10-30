@@ -7,7 +7,8 @@ Ext.define("EventsManager.controller.Events", {
 		// References sur les vues
         refs: {
 			eventsListContainer: "eventslistcontainer",
-			eventsList: "eventslist"
+			eventsList: "eventslist",
+			eventsEditor: "eventseditor"
         },
         control: {
         	// Evenements lance par EventsListContainer
@@ -17,23 +18,30 @@ Ext.define("EventsManager.controller.Events", {
             // Evenements lance par EventsList
             eventsList: {
             	editEventCommand: "onEditEventCommand"
+            },
+            // Evenements lance par EventsEditor
+            eventsEditor: {
+            	homeCommand: "onHomeCommand"
             }
         }
     },
     
     // Creer un nouvel evenement
     onNewEventCommand: function () {
-   
-    	var eventsEditor = {
-			xtype: "eventseditor"
-		};
-    	Ext.Viewport.animateActiveItem(eventsEditor, {type: 'slide', direction: 'left'});
-    	
+    	var newEvent = Ext.create("EventsManager.model.Events");
+    	this.getEventsEditor().setRecord(newEvent);
+    	Ext.Viewport.animateActiveItem(this.getEventsEditor(), {type: 'slide', direction: 'left'});  	
     },
     
     // Modifier un evenement existant
-    onEditEventCommand: function(){
-    	alert("onEditEvent");
+    onEditEventCommand: function(record){
+    	this.getEventsEditor().setRecord(record);
+    	Ext.Viewport.animateActiveItem(this.getEventsEditor(), {type: 'slide', direction: 'left'});  	
+    },
+    
+    // Retourner a la page principale
+    onHomeCommand: function(){
+    	Ext.Viewport.animateActiveItem(this.getEventsListContainer(), {type: 'slide', direction: 'right'});
     },
     
     launch: function () {

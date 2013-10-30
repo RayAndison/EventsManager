@@ -7,12 +7,12 @@ Ext.define("EventsManager.view.EventsList", {
     config: {
         loadingText: "Loading Events...",
         emptyText: '</pre><div class="events-list-empty-text">No events found.</div><pre>',
-        itemTpl: '</pre><div class="list-item-title">{titre}</div><div class="list-item-description">{description}</div><pre>',
+        itemTpl: '</pre><div class="list-item-title">{title}</div><div class="list-item-description">{description}</div><pre>',
         itemHeight: 100,
         
         // Fonction appelee quand on veut modifier l'evenement
         onItemDisclosure: function(record,btn,index) {
-			this.fireEvent("editEventCommand", this);
+			this.fireEvent("editEventCommand", record);
 		}
     }
 });

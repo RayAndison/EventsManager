@@ -68,7 +68,7 @@ Ext.define("EventsManager.view.EventsListContainer", {
     
     // Fonction sur Tap du bouton "New" => declenche l'evenement "newEventCommand"
     onNewButtonTap: function () {
-    	this.fireEvent("newEventCommand", this);
+    	this.fireEvent("newEventCommand");
     }
 
 });

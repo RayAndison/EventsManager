@@ -16,7 +16,9 @@ Ext.define("EventsManager.view.EventsEditor", {
     	var backButton = {
             xtype: "button",
             ui: "back",
-            text: "Home"
+            text: "Home",
+            handler: this.onHomeButtonTap,
+            scope: this
         };
     	
     	// Bouton pour enregistrer les modifications
@@ -82,5 +84,10 @@ Ext.define("EventsManager.view.EventsEditor", {
             },
             bottomToolbar
         ]);
+    },
+    
+    // Fonction pour revenir a la page principale
+    onHomeButtonTap: function(){
+    	this.fireEvent("homeCommand");
     }
 });
